@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 
 const education = [
-  { years: '2026 – 2028', degree: 'PGDM – Big Data Analytics', institution: 'Goa Institute of Management', detail: 'Currently pursuing', primary: true, color: '#2563EB' },
-  { years: '2022 – 2025', degree: 'B.Sc. Mathematics', institution: 'Fergusson (Autonomous) College, Pune', detail: '8.91 / 10 CGPA', primary: true, color: '#7C3AED' },
-  { years: '2021 – 2022', degree: 'HSC – Science', institution: '', detail: '82.67%', primary: false, color: '#06B6D4' },
-  { years: '2019 – 2020', degree: 'SSC', institution: '', detail: '96.40%', primary: false, color: '#059669' },
+  { years: '2026 – 2028', degree: 'PGDM – Big Data Analytics', institution: 'Goa Institute of Management, Goa', detail: 'Currently Pursuing', primary: true, color: '#2563EB' },
+  { years: '2022 – 2026', degree: 'Bachelor of Engineering (Computer)', institution: 'Goa College of Engineering, Goa University', detail: '8.37 CGPA (out of 10) till 7th Sem', primary: true, color: '#7C3AED' },
+  { years: '2021 – 2022', degree: 'HSC – Science', institution: 'Purushottam Walawalkar Higher Secondary School', detail: '78.67%', primary: false, color: '#06B6D4' },
+  { years: '2019 – 2020', degree: 'SSC – General', institution: 'Saraswat Vidyalaya High School (Goa Board)', detail: '91.5%', primary: false, color: '#059669' },
 ]
 
 const approach = [
@@ -16,49 +16,58 @@ const approach = [
 
 const differentiators = [
   {
-    title: 'Mathematical Thinking',
-    body: 'A rigorous foundation in mathematics, analytical reasoning and optimization that shapes how I approach every problem.',
+    title: 'Computer Engineering Foundation',
+    body: 'A strong engineering base in C, C++, Python, and OpenCV, bridging software development with data analytics and business decision-making.',
     gradient: 'from-[#F59E0B] to-[#EC4899]',
     iconBg: 'rgba(245,158,11,0.12)',
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="url(#g1)" strokeWidth="1.5">
-        <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#F59E0B"/><stop offset="1" stopColor="#EC4899"/></linearGradient></defs>
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      <svg width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M38 22L30 14L32.8 11.2L42.4 20.8C42.8 21.2 42.8 21.8 42.4 22.2L32.8 31.8L30 29L38 22Z" fill="#F59E0B"/>
+        <path d="M10 26L18 34L15.2 36.8L5.6 27.2C5.2 26.8 5.2 26.2 5.6 25.8L15.2 16.2L18 19L10 26Z" fill="#EC4899"/>
+        <rect x="22" y="9" width="4.5" height="30" rx="2" fill="#F59E0B" transform="rotate(7 22 9)"/>
+        <rect x="22.5" y="9.5" width="2.2" height="29" rx="1.1" fill="#FFFBEB" transform="rotate(7 22.5 9.5)"/>
       </svg>
     ),
   },
   {
-    title: 'Data & Analytics',
-    body: 'Experience with EDA, statistical analysis, KPI design, visualization and business analytics tools across real projects.',
+    title: 'Data & Visualisation',
+    body: 'Hands-on Power BI dashboards, DAX measures, statistical analysis, EDA and data storytelling across real retail and marketing datasets.',
     gradient: 'from-[#059669] to-[#06B6D4]',
     iconBg: 'rgba(5,150,105,0.12)',
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="url(#g2)" strokeWidth="1.5">
-        <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#059669"/><stop offset="1" stopColor="#06B6D4"/></linearGradient></defs>
-        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      <svg width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="36" width="36" height="4" rx="1.2" fill="#059669"/>
+        <rect x="10" y="18" width="7" height="18" rx="1.6" fill="#34D399"/>
+        <rect x="20.5" y="8" width="7" height="28" rx="1.6" fill="#06B6D4"/>
+        <rect x="31" y="22" width="7" height="14" rx="1.6" fill="#0891B2"/>
+        <circle cx="13.5" cy="21" r="1.6" fill="#ECFDF5"/>
+        <circle cx="24" cy="11" r="1.6" fill="#F0FDFA"/>
+        <circle cx="34.5" cy="25" r="1.6" fill="#ECFEFF"/>
       </svg>
     ),
   },
   {
-    title: 'Strategic Thinking',
-    body: 'Application of game theory, structured reasoning and evidence-based decision-making to business challenges.',
+    title: 'AI & Full-Stack Mindset',
+    body: 'From Gemini API-powered briefings to React/Flask full-stack apps and OpenCV image processing — comfortable building end-to-end solutions.',
     gradient: 'from-[#7C3AED] to-[#EA580C]',
     iconBg: 'rgba(124,58,237,0.12)',
     icon: (
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="url(#g3)" strokeWidth="1.5">
-        <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#7C3AED"/><stop offset="1" stopColor="#EA580C"/></linearGradient></defs>
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      <svg width="30" height="30" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 4C32.8366 4 40 11.1634 40 20C40 25.4182 37.3296 30.2689 33.1483 33.4808L34.6 40L28.4 37.32C27.0096 37.7665 25.5294 38 24 38C15.1634 38 8 30.8366 8 22C8 13.1634 15.1634 4 24 4Z" fill="#7C3AED"/>
+        <path d="M24 9V22L31 26" stroke="#FAF5FF" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="36" cy="9" r="5" fill="#EA580C"/>
+        <circle cx="36" cy="9" r="2.2" fill="#FFF7ED"/>
       </svg>
     ),
   },
 ]
 
 const personal = [
-  { label: 'Mathematics', icon: '∑', color: '#2563EB', gradient: 'from-[#2563EB] to-[#3B82F6]', desc: 'Rigorous problem solving' },
-  { label: 'Leadership', icon: '◈', color: '#7C3AED', gradient: 'from-[#7C3AED] to-[#A78BFA]', desc: 'Team & initiative driving' },
-  { label: 'Sports', icon: '◎', color: '#06B6D4', gradient: 'from-[#06B6D4] to-[#22D3EE]', desc: 'Discipline & teamwork' },
-  { label: 'Research', icon: '⌘', color: '#059669', gradient: 'from-[#059669] to-[#10B981]', desc: 'Evidence-based curiosity' },
-  { label: 'Continuous Learning', icon: '∞', color: '#EA580C', gradient: 'from-[#EA580C] to-[#F97316]', desc: 'Always growing' },
+  { label: 'Badminton', icon: '🏸', color: '#2563EB', gradient: 'from-[#2563EB] to-[#3B82F6]', desc: 'Goa University Champion 2023-24' },
+  { label: 'Leadership', icon: '◈', color: '#7C3AED', gradient: 'from-[#7C3AED] to-[#A78BFA]', desc: 'Event & Team coordination' },
+  { label: 'Harmonium', icon: '♪', color: '#06B6D4', gradient: 'from-[#06B6D4] to-[#22D3EE]', desc: 'National Kala Utsav · State 1st' },
+  { label: 'NPTEL Learning', icon: '⌘', color: '#059669', gradient: 'from-[#059669] to-[#10B981]', desc: '8+ exams · 75%+ pass rate' },
+  { label: 'Continuous Learning', icon: '∞', color: '#EA580C', gradient: 'from-[#EA580C] to-[#F97316]', desc: 'Google AI · Be10X Claude' },
 ]
 
 export default function AboutSection() {
@@ -81,9 +90,9 @@ export default function AboutSection() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#141414] dark:text-white mb-4 break-words">
             A{' '}
             <span className="text-gradient-sun">
-              mathematical foundation
+              Computer Engineering
             </span>{' '}
-            with a business analytics mindset.
+            foundation with a business analytics mindset.
           </h2>
         </motion.div>
 
@@ -96,16 +105,16 @@ export default function AboutSection() {
             className="w-full min-w-0"
           >
             <p className="text-sm sm:text-base text-[#525252] dark:text-[#A3A3A3] leading-[1.8] mb-4 break-words">
-              I am currently pursuing a PGDM in Big Data Analytics at Goa Institute of Management, building on my undergraduate foundation in Mathematics from Fergusson College, Pune.
+              I am currently pursuing a PGDM in Big Data Analytics at Goa Institute of Management, building on my undergraduate degree in Computer Engineering from Goa College of Engineering, Goa University.
             </p>
             <p className="text-sm sm:text-base text-[#525252] dark:text-[#A3A3A3] leading-[1.8] break-words">
-              My academic journey has shaped how I approach problems: understand the structure, analyze the evidence, identify patterns and translate insights into meaningful decisions.
+              My journey combines engineering rigor with business analytics: I write production-quality code, build Power BI dashboards, run exploratory data analysis, and design AI-powered applications — all to turn raw data into clear, actionable business decisions.
             </p>
             <div className="mt-8 pt-8 border-t border-[#E5E4E2] dark:border-[#1E1E1E] w-full min-w-0">
               <div className="relative pl-4">
                 <div className="absolute left-0 top-0 bottom-0 w-0.5 rounded-full" style={{ background: 'linear-gradient(to bottom, #F59E0B, #EC4899, #7C3AED)' }} />
                 <p className="text-sm sm:text-base font-medium text-[#141414] dark:text-white italic leading-relaxed break-words">
-                  "I enjoy turning complex problems into structured decisions using data, mathematics and analytical thinking."
+                  "I enjoy turning engineering code, analytical data and AI-powered tools into structured decisions that create real business impact."
                 </p>
               </div>
             </div>

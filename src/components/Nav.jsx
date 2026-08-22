@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import resumeImage from '../../Resume.jpeg'
+import resumeImage from '../../Samarth_Resume.png'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -46,7 +46,7 @@ export default function Nav({ darkMode, setDarkMode }) {
               href="#home"
               className="text-sm md:text-base font-bold tracking-tight hover:opacity-90 transition-opacity min-w-0 shrink-0"
             >
-              <span className="text-gradient-sunset leading-none">SHRADDHA REVAN SHETE</span>
+              <span className="text-gradient-sunset leading-none">SAMARTH RAVINDRA KAMAT</span>
             </a>
 
             <div className="hidden md:flex items-center gap-1">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import officialPhoto from '@/imports/Official_Photo.jpeg'
-import resumeImage from '../../../Resume.jpeg'
+import officialPhoto from '../../../Samarth_Photo.jpeg'
+import resumeImage from '../../../Samarth_Resume.png'
 
 function FadeUp({ children, delay = 0, className = '' }) {
   return (
@@ -27,17 +27,14 @@ function PhotoCard() {
         <div className="relative aspect-square overflow-hidden rounded-full border border-white/10 bg-[#E8E8E8] shadow-2xl">
           <img
             src={officialPhoto}
-            alt="Shraddha Revan Shete — PGDM Big Data Analytics, Goa Institute of Management"
+            alt="Samarth Ravindra Kamat — PGDM Big Data Analytics, Goa Institute of Management"
             className="h-full w-full object-cover object-top"
           />
         </div>
       </div>
       <div className="mt-8 text-center w-full min-w-0">
         <p className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight">
-          <span className="text-gradient-warm">Shraddha Revan Shete</span>
-        </p>
-        <p className="mt-2 text-sm md:text-base text-[#525252] dark:text-[#A3A3A3] break-words">
-          PGDM - Big Data Analytics · GIM
+          <span className="text-gradient-warm">Samarth Ravindra Kamat</span>
         </p>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -95,22 +92,22 @@ export default function HomeSection() {
 
               <FadeUp delay={0.08}>
                 <h1 className="text-[2.1rem] sm:text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.08] tracking-[-0.025em] text-[#141414] dark:text-white">
-                  Turning data and{' '}
+                  Turning engineering and{' '}
                   <span className="text-gradient-sun">
-                    mathematical thinking
+                    data analytics
                   </span>{' '}
-                  into better business decisions.
+                  into impactful business solutions.
                 </h1>
               </FadeUp>
 
               <FadeUp delay={0.22}>
                 <p className="text-sm sm:text-base md:text-lg text-[#525252] dark:text-[#A3A3A3] leading-relaxed break-words">
-                  Business analytics professional in training with a foundation in Mathematics, Statistics, Data Analytics, Visualization and Strategic Problem Solving.
+                  Business analytics professional in training with a Computer Engineering foundation, hands-on experience in Python, Power BI, OpenCV, and full-stack development — bridging code, data and business decisions.
                 </p>
               </FadeUp>
 
               <FadeUp delay={0.32} className="flex items-center gap-2 flex-wrap w-full min-w-0">
-                {['React', 'Flask', 'Python', 'Power BI', 'SQL'].map((tech, i) => (
+                {['Python', 'Power BI', 'TensorFlow', 'LSTM', 'Flask'].map((tech, i) => (
                   <span
                     key={tech}
                     className="text-[10px] font-semibold px-3 py-1.5 rounded-full border break-words"
@@ -151,7 +148,7 @@ export default function HomeSection() {
 
               <FadeUp delay={0.52}>
                 <a
-                  href="https://linkedin.com/in/shraddhashete"
+                  href="https://linkedin.com/in/samarthkamat"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-1.5 text-sm text-[#737373] hover:text-[#EC4899] dark:hover:text-[#F472B6] transition-colors w-fit break-words"
@@ -196,21 +193,21 @@ export default function HomeSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full min-w-0">
             {[
               {
-                title: 'Marketing Campaign Profitability Analysis',
-                problem: 'Identifying where marketing spend creates — and destroys — profit across 1,200 campaigns.',
-                metric: '1,200 campaigns', tag: 'Business Analytics',
+                title: 'Retail Sales Analytics Dashboard',
+                problem: 'Interactive Power BI dashboard for multi-state retail sales with slicers, KPI cards and DAX-driven visualisations.',
+                metric: 'Profit swing ₹3.7K→₹10.3K', tag: 'Business Intelligence',
                 c1: '#F59E0B', c2: '#EC4899', delay: 0,
               },
               {
-                title: 'Automobile Sales Analytics Dashboard',
-                problem: 'Turning complex sales data into decision-ready insights across $371.2M in transactions.',
-                metric: '$371.2M YTD', tag: 'Business Intelligence',
+                title: 'AI-Powered Global Briefing Platform',
+                problem: 'Gemini API-driven news briefings with real-time claim-level fact verification against cited sources.',
+                metric: 'Gemini API · Fact-Check', tag: 'Artificial Intelligence',
                 c1: '#EC4899', c2: '#7C3AED', delay: 0.1,
               },
               {
-                title: 'Game Theory Research for Strategic Decision-Making',
-                problem: 'Using mathematical reasoning to improve strategic decisions through evidence-based frameworks.',
-                metric: '95% feedback', tag: 'Strategy',
+                title: 'Multi-Disease Detection via Speech (Deep Learning)',
+                problem: 'Stacked LSTM + MFCC/VGGish fusion with 92.06% binary and 70.37% multi-class accuracy, deployed via Flask.',
+                metric: 'LSTM · 92.06% · Flask', tag: 'Deep Learning',
                 c1: '#7C3AED', c2: '#06B6D4', delay: 0.2,
               },
             ].map((project) => (

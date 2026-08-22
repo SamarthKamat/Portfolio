@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import resumeImage from '../../../Resume.jpeg'
+import resumeImage from '../../../Samarth_Resume.png'
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -47,9 +47,9 @@ export default function ContactSection() {
             <div className="flex flex-col gap-3 mb-6">
               {[
                 {
-                  href: 'https://linkedin.com/in/shraddhashete',
+                  href: 'https://linkedin.com/in/samarthkamat',
                   label: 'Connect on LinkedIn',
-                  sub: 'linkedin.com/in/shraddhashete',
+                  sub: 'linkedin.com/in/samarthkamat',
                   gradient: 'from-[#0A66C2] to-[#2563EB]',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -58,9 +58,9 @@ export default function ContactSection() {
                   ),
                 },
                 {
-                  href: 'mailto:shraddha.shete2026b@gim.ac.in',
+                  href: 'mailto:samarth.kamat2026b@gim.ac.in',
                   label: 'Email',
-                  sub: 'shraddha.shete2026b@gim.ac.in',
+                  sub: 'samarth.kamat2026b@gim.ac.in',
                   gradient: 'from-[#7C3AED] to-[#06B6D4]',
                   icon: (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -96,7 +96,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold bg-gradient-to-r from-[#EA580C] to-[#EAB308] bg-clip-text text-transparent">Phone</p>
-                  <p className="text-xs text-[#A3A3A3]">+91-8180058619</p>
+                  <p className="text-xs text-[#A3A3A3]">+91-7709085986</p>
                 </div>
               </div>
             </div>

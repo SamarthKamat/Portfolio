@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 
 const skillGroups = [
   {
-    title: 'Business Analytics',
+    title: 'Data Analytics',
     gradient: 'from-[#2563EB] to-[#7C3AED]',
-    skills: ['Exploratory Data Analysis', 'Statistical Analysis', 'KPI Analysis', 'Business Analytics', 'Data Cleaning', 'Data Visualization'],
+    skills: ['Exploratory Data Analysis', 'Statistical Analysis', 'Data Cleaning', 'Data Visualisation', 'Business Analytics', 'KPI Analysis'],
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
@@ -13,9 +13,9 @@ const skillGroups = [
     ),
   },
   {
-    title: 'Programming & Data',
+    title: 'Programming',
     gradient: 'from-[#059669] to-[#06B6D4]',
-    skills: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'R', 'SQL', 'Flask'],
+    skills: ['C', 'C++', 'Python', 'Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'OpenCV', 'SQL', 'R'],
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
@@ -23,9 +23,9 @@ const skillGroups = [
     ),
   },
   {
-    title: 'Business Intelligence',
+    title: 'Software Packages',
     gradient: 'from-[#7C3AED] to-[#2563EB]',
-    skills: ['Power BI', 'Tableau', 'Advanced Excel', 'DAX'],
+    skills: ['Microsoft Power BI', 'Advanced Excel', 'LaTeX', 'PowerPoint', 'GitHub'],
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
@@ -35,7 +35,7 @@ const skillGroups = [
   {
     title: 'AI & Machine Learning',
     gradient: 'from-[#EA580C] to-[#EAB308]',
-    skills: ['Prompt Engineering', 'ML Fundamentals', 'Regression', 'Classification', 'Forecasting', 'Decision Trees', 'Model Evaluation'],
+    skills: ['Gemini API', 'Prompt Engineering', 'TensorFlow / Keras', 'ML Fundamentals', 'LSTM', 'VGGish', 'Regression', 'Classification', 'Forecasting', 'Decision Trees', 'Model Evaluation'],
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M12 2a10 10 0 1 0 10 10"/>
@@ -45,9 +45,9 @@ const skillGroups = [
     ),
   },
   {
-    title: 'Web & Tools',
+    title: 'Web & Full-Stack',
     gradient: 'from-[#06B6D4] to-[#059669]',
-    skills: ['React', 'Flask', 'HTML', 'LaTeX', 'PowerPoint', 'Data Storytelling', 'Research Writing'],
+    skills: ['React', 'Flask', 'OpenCV', 'JavaScript', 'Vibe Coding', 'Text-to-Speech Systems'],
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
@@ -57,19 +57,21 @@ const skillGroups = [
 ]
 
 const certifications = [
-  { name: 'Advanced Microsoft Excel', year: '2026', detail: '' },
-  { name: 'GenAI Powered Data Analytics Job Simulation', year: '2025', detail: '' },
-  { name: 'Ethics and Critical Thinking', year: '2024', detail: 'Grade A' },
-  { name: 'OFCM2023 — MTTS Trust', year: '2023', detail: '' },
-  { name: 'GCC-TBC 40 English', year: '2026', detail: '94.5%' },
+  { name: 'Google AI Essentials (Coursera) — 5-course Specialisation', year: '2026', detail: 'Prompt Eng. · AI · Productivity' },
+  { name: 'Be10X AI Tools & Claude Workshop', year: '2026', detail: 'Presentation · Data · Debugging' },
+  { name: 'NPTEL Enthusiast (IIT Madras)', year: '2024', detail: '8+ Exams · 75%+ Pass' },
+  { name: 'NPTEL Motivated Learner (IIT Madras)', year: '2025', detail: '4 Semesters · 75%+ Pass' },
+  { name: 'Government Scholarship — Indian Classical Music', year: '2019-21', detail: '₹48K Overall (2 Years)' },
 ]
 
 const techStack = [
-  { name: 'React', role: 'Frontend · Portfolio UI', color: '#06B6D4' },
+  { name: 'Python', role: 'EDA · ML · Speech', color: '#2563EB' },
+  { name: 'TensorFlow/Keras', role: 'Deep Learning', color: '#F472B6' },
+  { name: 'Power BI', role: 'Dashboards · DAX', color: '#EA580C' },
+  { name: 'React', role: 'Frontend · App UI', color: '#06B6D4' },
   { name: 'Flask', role: 'Backend · API Layer', color: '#059669' },
-  { name: 'Python', role: 'Data Analysis · ML', color: '#2563EB' },
-  { name: 'Power BI', role: 'BI Dashboards', color: '#EA580C' },
-  { name: 'SQL', role: 'Data Querying', color: '#7C3AED' },
+  { name: 'Gemini API', role: 'AI Briefings · GenAI', color: '#EC4899' },
+  { name: 'Librosa / MFCC', role: 'Speech Features', color: '#7C3AED' },
 ]
 
 export default function SkillsSection() {
@@ -92,11 +94,11 @@ export default function SkillsSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#141414] dark:text-white mb-3">
             My{' '}
             <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#06B6D4] bg-clip-text text-transparent">
-              Analytics Toolkit
+              Engineering & Analytics Toolkit
             </span>
           </h2>
           <p className="text-base text-[#737373] dark:text-[#737373] max-w-xl">
-            Tools are useful. Knowing how to apply them to the right problem matters more.
+            C/C++ engineering, Python data analysis, Power BI dashboards and Gemini AI — applied end-to-end.
           </p>
         </motion.div>
 
@@ -110,7 +112,7 @@ export default function SkillsSection() {
           <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
             <div className="flex-shrink-0">
               <p className="text-[10px] font-semibold uppercase tracking-widest text-[#A3A3A3] mb-1">Tech Stack</p>
-              <p className="text-sm font-semibold text-[#141414] dark:text-white">React · Flask · Python</p>
+              <p className="text-sm font-semibold text-[#141414] dark:text-white">Python · TensorFlow · Power BI · React · Flask · Gemini</p>
             </div>
             <div className="flex flex-wrap gap-3">
               {techStack.map((t) => (
