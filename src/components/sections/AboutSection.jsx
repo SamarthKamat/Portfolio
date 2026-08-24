@@ -109,9 +109,6 @@ export default function AboutSection() {
                 business thinker by design.
               </h2>
             </div>
-            <p className="text-[14px] sm:text-[15px] text-[#5A5A6D] dark:text-[#9A9AB0] leading-relaxed md:max-w-sm md:text-right md:pl-8 md:border-l border-black/5 dark:border-white/10">
-              Goa → Mangalore → Goa. Clean-code habits from Computer Engineering at GEC, now pairing them with PGDM Big Data Analytics at GIM to deliver answers a boardroom cares about.
-            </p>
           </div>
         </Reveal>
 

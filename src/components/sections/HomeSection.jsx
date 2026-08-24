@@ -259,7 +259,6 @@ export default function HomeSection() {
                 ['EDA', 'Pandas · NumPy'],
                 ['Dashboards', 'Power BI · DAX'],
                 ['Machine Learning', 'Scikit-learn · Keras'],
-                ['Neural Networks', 'LSTM · Keras'],
                 ['Full Stack', 'React · Flask'],
                 ['Gen AI', 'Gemini API · Prompt Eng.'],
               ].map(([k, v], i) => (
