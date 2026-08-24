@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const filters = [
   { label: 'All', value: 'all' },
-  { label: 'Business Intelligence', value: 'business-intelligence' },
+  { label: 'Business Analytics/Data Analytics', value: 'business-intelligence' },
   { label: 'Artificial Intelligence', value: 'artificial-intelligence' },
-  { label: 'Data Analytics', value: 'data-analytics' },
+  { label: 'Machine Learning', value: 'data-analytics' },
 ]
 
 function RetailSalesVisual() {
@@ -26,7 +26,7 @@ function RetailSalesVisual() {
     { name: 'Groceries', pct: 15.2, value: '₹12.8K', width: '25%', color: '#34D399' },
   ]
   return (
-    <div className="p-4 rounded-xl w-full" style={{ background: 'linear-gradient(135deg, #0F172A, #1E1B4B)' }}>
+    <div className="p-4 sm:p-5 rounded-none sm:rounded-xl w-full h-full min-h-[18rem] flex flex-col" style={{ background: 'linear-gradient(135deg, #0F172A, #1E1B4B)' }}>
       <div className="flex items-center justify-between mb-3">
         <p className="text-[9px] font-semibold text-white/60 uppercase tracking-widest">Retail Sales Analytics</p>
         <div className="flex gap-1">
@@ -130,7 +130,7 @@ function RetailSalesVisual() {
 
 function AIBriefingVisual() {
   return (
-    <div className="p-5 bg-[#F9F8F6] dark:bg-[#0D0D0D] rounded-xl w-full">
+    <div className="p-4 sm:p-5 rounded-none sm:rounded-xl w-full h-full min-h-[18rem] flex flex-col bg-[#F9F8F6] dark:bg-[#0D0D0D]">
       <div className="flex items-center justify-between mb-4">
         <p className="text-[10px] font-mono text-[#A3A3A3] uppercase tracking-widest">AI Briefing · Fact Check Pipeline</p>
         <div className="flex items-center gap-1.5 text-[9px] text-[#737373]">
@@ -167,9 +167,9 @@ function AIBriefingVisual() {
 
 function DiseaseDetectionVisual() {
   return (
-    <div className="p-5 rounded-xl w-full" style={{ background: 'linear-gradient(135deg, #1A1033, #0A0A24)' }}>
+    <div className="p-4 sm:p-5 rounded-none sm:rounded-xl w-full h-full min-h-[18rem] flex flex-col" style={{ background: 'linear-gradient(135deg, #1A1033, #0A0A24)' }}>
       <div className="flex items-center justify-between mb-4">
-        <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: '#C4B5FD' }}>Speech → MFCC/VGGish → Stacked LSTM</p>
+        <p className="text-[10px] font-mono uppercase tracking-widest" style={{ color: '#C4B5FD' }}>Speech → Features → Stacked LSTM</p>
         <div className="flex items-center gap-1.5 text-[9px]" style={{ color: '#A78BFA' }}>
           <span className="w-2 h-2 rounded-full inline-block" style={{ background: '#10B981', boxShadow: '0 0 8px #10B981' }} />Deployed
         </div>
@@ -184,7 +184,7 @@ function DiseaseDetectionVisual() {
         </div>
         <div className="grid grid-cols-2 gap-2">
           <div className="rounded-lg p-3 border border-white/10 bg-white/5">
-            <p className="text-[9px] text-white/40 mb-1 uppercase tracking-wider">MFCC + VGGish</p>
+            <p className="text-[9px] text-white/40 mb-1 uppercase tracking-wider">Audio Features</p>
             <div className="grid grid-cols-13 gap-0.5">
               {Array.from({ length: 52 }).map((_, i) => (
                 <div key={i} className="h-2 rounded-sm" style={{
@@ -232,7 +232,7 @@ function DiseaseDetectionVisual() {
         </div>
         <div className="flex items-center justify-between pt-1 text-[9px] text-white/50">
           <span className="px-2 py-1 rounded-full bg-white/5 border border-white/10">Librosa</span>
-          <span className="px-2 py-1 rounded-full bg-white/5 border border-white/10">MFCC</span>
+          <span className="px-2 py-1 rounded-full bg-white/5 border border-white/10">Keras</span>
           <span className="px-2 py-1 rounded-full bg-white/5 border border-white/10">Flask API</span>
         </div>
       </div>
@@ -299,25 +299,25 @@ const projects = [
     id: 'multi-disease-detection',
     projectUrl: 'https://multi-disease-detection.netlify.app/',
     filter: ['all', 'data-analytics', 'artificial-intelligence'],
-    category: 'Deep Learning · Speech Processing · Clinical AI',
+    category: 'Neural Networks · Speech Processing · Clinical AI',
     tag: 'Artificial Intelligence',
-    title: 'Multi-Disease Detection Using Human Speech Through Deep Learning',
+    title: 'Multi-Disease Detection Using Human Speech Through Neural Networks',
     headline: 'Two-phase stacked LSTM framework for non-invasive disease screening using speech.',
-    description: 'Developed a two-phase deep learning framework for non-invasive disease detection using human speech: performing binary screening (healthy vs. at-risk) followed by multi-class disease classification. Extracted and fused MFCC acoustic features with VGGish deep audio embeddings to improve detection performance and robustness.',
+    description: 'Developed a two-phase neural network framework for non-invasive disease detection using human speech: performing binary screening (healthy vs. at-risk) followed by multi-class disease classification. Extracted and fused audio acoustic features with deep audio embeddings to improve detection performance and robustness.',
     metrics: [
       { value: '92.06%', label: 'Binary Accuracy' },
       { value: '70.37%', label: 'Multi-Class Acc' },
       { value: 'Stacked LSTM · Flask', label: 'End-to-End Deployed' },
     ],
     insight: 'Built stacked LSTM models with weighted-loss optimization, then deployed the trained models as a Flask-powered web application for real-time speech-based disease prediction.',
-    recommendation: 'Fusing MFCCs with VGGish embeddings consistently outperformed single-feature baselines — demonstrating the value of combining engineered and learned audio representations for clinical speech tasks.',
+    recommendation: 'Fusing engineered audio features with learned embeddings consistently outperformed single-feature baselines — demonstrating the value of combining engineered and learned audio representations for clinical speech tasks.',
     Visual: DiseaseDetectionVisual,
     gradient: 'from-[#7C3AED] to-[#06B6D4]',
     caseStudy: {
       problem: 'Many disease screening pipelines are invasive, expensive or require clinic visits. We set out to build a non-invasive screening tool that detects disease signatures in human speech — leveraging the well-known speech changes (prosody, phonation, jitter) linked to multiple health conditions.',
-      data: 'Speech recordings with corresponding disease labels across multiple conditions. Preprocessed with Librosa and OpenSMILE for MFCC extraction; VGGish deep embeddings produced from pre-trained audio models. Data split into binary screening and multi-class disease classification labels.',
+      data: 'Speech recordings with corresponding disease labels across multiple conditions. Preprocessed with Librosa and OpenSMILE for acoustic feature extraction; deep audio embeddings produced from pre-trained audio models. Data split into binary screening and multi-class disease classification labels.',
       analysis: 'Designed a two-phase framework: Phase 1 binary screening using stacked LSTMs, Phase 2 multi-class disease classification on the predicted-positive cohort. Evaluated both single-feature and fusion approaches. Post-training predictions are routed through a Flask backend with a React UI for clinicians to review each sample and its predicted class confidences.',
-      insights: ['MFCC + VGGish fusion improved multi-class accuracy by ~8% over MFCC-only baseline.','Weighted-loss optimization addressed class imbalance in rare conditions, stabilizing recall for minority diseases.','Binary phase reached 92.06% accuracy — sufficient for a first-pass triage role in the screening workflow.','Structured per-prediction confidence reports and clear class-label translations simplified review handoff to clinical partners.'],
+      insights: ['Audio feature fusion improved multi-class accuracy by ~8% over single-feature baseline.','Weighted-loss optimization addressed class imbalance in rare conditions, stabilizing recall for minority diseases.','Binary phase reached 92.06% accuracy — sufficient for a first-pass triage role in the screening workflow.','Structured per-prediction confidence reports and clear class-label translations simplified review handoff to clinical partners.'],
       recommendation: 'Deploy the model as a Flask-powered screening assistant with a confidence-calibrated output that automatically flags low-confidence predictions for clinician review.',
       impact: 'Deployed web application accessible via Netlify + Flask backend. Patients record a short voice sample and receive a clear, accessible screening output with per-class confidences — enabling non-invasive pre-screening before clinical follow-up.',
     },
@@ -421,149 +421,205 @@ export default function ProjectsSection() {
   const [caseStudy, setCaseStudy] = useState(null)
 
   const visible = projects.filter(p => p.filter.includes(filter))
+  const projectStacks = {
+    'retail-sales': ['Power BI', 'DAX', 'Data Modeling', 'Slicers', 'KPI Cards'],
+    'ai-briefing': ['Gemini API', 'React', 'Fact Checking', 'Source Cross-Check', 'Netlify'],
+    'multi-disease-detection': ['Librosa', 'Keras', 'Audio Features', 'Stacked LSTM', 'Flask', 'React'],
+  }
 
   return (
     <section
       id="projects"
-      className="py-24 px-6 lg:px-8"
-      style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.04) 0%, rgba(6,182,212,0.03) 100%)' }}
+      className="py-24 px-6 lg:px-8 relative overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, rgba(124,58,237,0.06) 0%, rgba(6,182,212,0.04) 60%, rgba(236,72,153,0.04) 100%)' }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="absolute -top-32 -right-24 w-[500px] h-[500px] rounded-full opacity-30 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle, #7C3AED, transparent 60%)' }} />
+      <div className="absolute top-1/3 -left-24 w-[420px] h-[420px] rounded-full opacity-20 blur-3xl pointer-events-none" style={{ background: 'radial-gradient(circle, #06B6D4, transparent 60%)' }} />
+      <div className="absolute inset-0 bg-grid-lines opacity-[0.035] dark:opacity-[0.07] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-12"
         >
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent mb-3">
-            Selected Projects
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#141414] dark:text-white mb-4 leading-[1.05]">
-            Where engineering code,{' '}
-            <span className="bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] bg-clip-text text-transparent">
-              data analytics
-            </span>{' '}
-            and AI meet real problems.
-          </h2>
-          <p className="text-lg text-[#737373] dark:text-[#737373] max-w-2xl leading-relaxed">
-            Projects built on genuine work — from Power BI dashboards to Gemini AI apps and OpenCV prototypes.
-          </p>
+          <div className="flex flex-wrap items-end justify-between gap-6 mb-8">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                <span className="section-eyebrow font-mono">
+                  03 / FEATURED WORK
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-mono px-2.5 py-1 rounded-full bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] pulse-glow" />
+                  LIVE · 3 DEPLOYED
+                </span>
+              </div>
+              <h2 className="text-[2.6rem] md:text-[3.6rem] lg:text-[4.2rem] font-bold tracking-tight text-[#141414] dark:text-white mb-5 leading-[1.02]">
+                <span className="block">Code, data and models</span>
+                <span className="block text-gradient-sunset mt-1">that shipped real impact.</span>
+              </h2>
+              <p className="text-lg text-[#737373] dark:text-[#8A8A8A] leading-relaxed">
+                Three production-grade projects across Power BI analytics, LLM-powered applications and clinical speech-AI — each with live demos, end-to-end pipelines and documented case studies.
+              </p>
+            </div>
+            <div className="w-full lg:w-auto flex lg:flex items-end gap-4 shrink-0 lg:mt-0 mt-2">
+              {[
+                { n: '3', l: 'Shipped Projects', c: '#7C3AED' },
+                { n: '92.06%', l: 'Peak Model Accuracy', c: '#06B6D4' },
+                { n: '₹10.3K', l: 'Dashboard Profit Peak', c: '#F59E0B' },
+              ].map((k) => (
+                <div key={k.l} className="flex-1 lg:flex-none bg-white dark:bg-[#141414] border border-[#E5E4E2] dark:border-[#222] rounded-2xl px-5 py-4 text-right min-w-[120px]">
+                  <p className="text-[11px] font-mono uppercase tracking-widest text-[#A3A3A3] mb-1.5">{k.l}</p>
+                  <p className="text-2xl font-bold bg-clip-text text-transparent" style={{ backgroundImage: `linear-gradient(135deg, ${k.c}, #EC4899)` }}>{k.n}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
-        <div className="flex flex-wrap gap-2 mb-12">
+        <div className="flex flex-wrap gap-2.5 mb-14">
           {filters.map((f) => (
             <motion.button
               key={f.value}
               onClick={() => setFilter(f.value)}
-              whileHover={{ scale: 1.04, y: -2 }}
+              whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              className={`px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 ${
+              className={`px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 backdrop-blur-sm ${
                 filter === f.value
-                  ? 'text-white shadow-md'
-                  : 'bg-white dark:bg-[#111111] border border-[#E5E4E2] dark:border-[#1E1E1E] text-[#525252] dark:text-[#A3A3A3] hover:border-[#A3A3A3]'
+                  ? 'text-white shadow-xl shadow-violet-500/20'
+                  : 'bg-white/60 dark:bg-[#141414]/60 border border-[#E5E4E2] dark:border-[#222] text-[#525252] dark:text-[#A3A3A3] hover:border-[#7C3AED]/40 hover:text-[#7C3AED] dark:hover:border-[#7C3AED]/50 dark:hover:text-[#A78BFA]'
               }`}
-              style={filter === f.value ? { background: 'linear-gradient(135deg, #2563EB, #7C3AED)' } : {}}
+              style={filter === f.value ? { background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 55%, #EC4899 100%)' } : {}}
             >
               {f.label}
             </motion.button>
           ))}
         </div>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-10">
           <AnimatePresence mode="wait">
-            {visible.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                whileHover={{ y: -6, scale: 1.005 }}
-                transition={{ delay: idx * 0.08, type: 'spring', stiffness: 140, damping: 20 }}
-                className="group bg-white dark:bg-[#111111] border border-[#E5E4E2] dark:border-[#1E1E1E] rounded-[28px] overflow-hidden hover:shadow-[0_24px_70px_rgba(37,99,235,0.10)] dark:hover:shadow-[0_28px_80px_rgba(0,0,0,0.55)] transition-shadow duration-300 relative"
-              >
-                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${project.gradient}`} />
-                <motion.div
-                  aria-hidden="true"
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br ${project.gradient}`}
-                  style={{ mixBlendMode: 'soft-light' }}
-                />
-                <div className={`grid ${idx % 2 === 0 ? 'lg:grid-cols-[1.08fr_390px]' : 'lg:grid-cols-[390px_1.08fr]'} gap-0`}>
-                  <div className={`relative p-9 md:p-12 flex flex-col gap-7 ${idx % 2 !== 0 ? 'lg:order-2' : ''}`}>
-                    <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className={`w-2 h-2 rounded-full bg-gradient-to-br ${project.gradient}`} />
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-[#A3A3A3]">{project.category}</span>
+            {visible.map((project, idx) => {
+              const even = idx % 2 === 0
+              return (
+                <motion.article
+                  key={project.id}
+                  initial={{ opacity: 0, y: 36 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  whileHover={{ y: -8 }}
+                  transition={{ delay: idx * 0.1, type: 'spring', stiffness: 130, damping: 22 }}
+                  className="group relative"
+                >
+                  <div className={`absolute -inset-px rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm bg-gradient-to-r ${project.gradient}`} />
+                  <div className="relative bg-white dark:bg-[#0F0F12] border border-[#E5E4E2] dark:border-[#1E1E24] rounded-[32px] overflow-hidden">
+                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${project.gradient}`} />
+                    <div className={`grid ${even ? 'lg:grid-cols-[1.1fr_0.9fr]' : 'lg:grid-cols-[0.9fr_1.1fr]'} gap-0 items-stretch h-fit`}>
+                      <div className={`relative p-5 md:p-6 flex flex-col gap-4 ${!even ? 'lg:order-2 border-l border-[#F1F0EE] dark:border-[#1A1A20]' : 'border-r border-[#F1F0EE] dark:border-[#1A1A20]'}`}>
+                        <div className="absolute top-4 right-4 flex items-center gap-2">
+                          <span className={`font-mono text-[10px] font-bold px-2.5 py-1 rounded-full bg-gradient-to-r ${project.gradient} text-white shadow-md`}>
+                            PROJ · 0{idx + 1}
+                          </span>
+                        </div>
+
+                        <div className="pt-1">
+                          <div className="flex items-center gap-2 mb-3 flex-wrap pr-24">
+                            <div className={`w-2 h-2 rounded-full bg-gradient-to-br ${project.gradient} shadow-lg`} />
+                            <span className="text-[9px] font-mono font-semibold uppercase tracking-[0.15em] text-[#A3A3A3] dark:text-[#8A8A8A]">{project.category}</span>
+                          </div>
+                          <h3 className="text-[1.35rem] md:text-[1.65rem] font-bold text-[#141414] dark:text-white mb-3 leading-[1.1] tracking-tight">
+                            {project.title}
+                          </h3>
+                          <div className={`inline-block text-sm md:text-[15px] font-semibold italic mb-3 bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent border-b border-dashed border-current/30 pb-0.5`}>
+                            “{project.headline}”
+                          </div>
+                          <p className="text-[13px] md:text-sm text-[#525252] dark:text-[#9A9AA2] leading-[1.65] max-w-3xl">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        <div className="relative">
+                          <div className="flex items-center gap-2 mb-2.5">
+                            <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-md bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/20">
+                              ⚡ IMPACT
+                            </span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-2 md:gap-3">
+                            {project.metrics.map((m) => (
+                              <motion.div
+                                key={m.label}
+                                whileHover={{ y: -2 }}
+                                className="bg-gradient-to-br from-[#F9F8F6] to-white dark:from-[#16161C] dark:to-[#121218] border border-[#E5E4E2] dark:border-[#1E1E24] rounded-xl p-2.5 md:p-3"
+                              >
+                                <p className={`text-base md:text-lg font-extrabold bg-clip-text text-transparent mb-0.5 leading-tight`}>
+                                  <span className={`bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>{m.value}</span>
+                                </p>
+                                <p className="text-[9px] md:text-[10px] font-mono uppercase tracking-wider text-[#737373] dark:text-[#6E6E78]">{m.label}</p>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <p className="text-[9px] font-mono font-bold uppercase tracking-[0.15em] text-[#A3A3A3] dark:text-[#6E6E78] mb-2">⚙ STACK</p>
+                          <div className="flex flex-wrap gap-1">
+                            {projectStacks[project.id]?.map((t) => (
+                              <span
+                                key={t}
+                                className="text-[10px] font-semibold px-2 py-1 rounded-md bg-[#F9F8F6] dark:bg-[#16161C] border border-[#E5E4E2] dark:border-[#222] text-[#525252] dark:text-[#B4B4BD]"
+                              >
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-2 pt-0.5">
+                          <motion.button
+                            whileHover={{ x: 3, scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className={`group flex items-center gap-1.5 px-4 py-2.5 rounded-full text-white text-sm font-semibold shadow-lg shadow-violet-500/20 bg-gradient-to-r ${project.gradient}`}
+                            onClick={() => setCaseStudy(project)}
+                          >
+                            📖 Case Study
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                              <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                          </motion.button>
+                          {project.projectUrl && (
+                            <motion.a
+                              href={project.projectUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ y: -2, scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              className="inline-flex items-center gap-1.5 rounded-full border-2 border-[#141414]/10 dark:border-white/10 bg-white dark:bg-[#141414] px-4 py-2.5 text-sm font-semibold text-[#141414] dark:text-white hover:border-[#7C3AED]/50 hover:text-[#7C3AED] dark:hover:border-[#A78BFA]/60 dark:hover:text-[#C4B5FD] transition-all"
+                            >
+                              🚀 Live Demo
+                              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                              </svg>
+                            </motion.a>
+                          )}
+                        </div>
                       </div>
-                      <h3 className="text-2xl md:text-[2rem] font-bold text-[#141414] dark:text-white mb-4 leading-[1.15]">{project.title}</h3>
-                      <p className={`text-base md:text-lg font-semibold italic mb-2 bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>
-                        "{project.headline}"
-                      </p>
-                      <p className="text-base md:text-lg text-[#525252] dark:text-[#A3A3A3] leading-relaxed mt-4 max-w-3xl">{project.description}</p>
-                    </div>
-                    <div className="flex flex-wrap gap-8">
-                      {project.metrics.map((m) => (
-                        <motion.div
-                          key={m.label}
-                          whileHover={{ y: -2 }}
-                          className="min-w-[110px]"
-                        >
-                          <p className={`text-2xl md:text-[1.75rem] font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>{m.value}</p>
-                          <p className="text-sm text-[#A3A3A3]">{m.label}</p>
-                        </motion.div>
-                      ))}
-                    </div>
-                    <div className="pt-5 border-t border-[#F1F0EE] dark:border-[#1A1A1A] space-y-3">
-                      <div>
-                        <p className="text-xs text-[#525252] dark:text-[#A3A3A3]">
-                          <span className="font-semibold text-[#141414] dark:text-white">Insight: </span>{project.insight}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-[#525252] dark:text-[#A3A3A3]">
-                          <span className="font-semibold text-[#141414] dark:text-white">Recommendation: </span>{project.recommendation}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex flex-wrap items-center gap-4 pt-1">
-                      <motion.button
-                        whileHover={{ x: 4, scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`group flex items-center gap-2 text-base md:text-lg font-semibold w-fit bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}
-                        onClick={() => setCaseStudy(project)}
+
+                      <motion.div
+                        whileHover={{ scale: 1.005 }}
+                        transition={{ type: 'spring', stiffness: 180 }}
+                        className={`p-0 flex items-center justify-center relative self-stretch bg-gradient-to-br ${even ? 'from-[#F9F8F6] via-white to-[#FAFAF8] dark:from-[#0B0B10] dark:via-[#0D0D12] dark:to-[#0B0B0F]' : 'from-[#FAFAF8] via-white to-[#F9F8F6] dark:from-[#0B0B0F] dark:via-[#0D0D12] dark:to-[#0B0B10]'}`}
                       >
-                        View Case Study
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2.5">
-                          <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                      </motion.button>
-                      {project.projectUrl && (
-                        <motion.a
-                          href={project.projectUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ y: -2, scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                          className="inline-flex items-center gap-2 rounded-full border border-[#D4D3D1] dark:border-[#2A2A2A] px-6 py-3 text-sm md:text-base font-semibold text-[#141414] dark:text-white hover:border-[#2563EB] hover:text-[#2563EB] dark:hover:border-[#7C3AED] dark:hover:text-[#A78BFA] transition-all"
-                        >
-                          View Project
-                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="-translate-y-px">
-                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
-                          </svg>
-                        </motion.a>
-                      )}
+                        <div className="absolute inset-0 bg-grid-dots opacity-[0.15] dark:opacity-[0.08]" />
+                        <div className={`absolute -top-10 ${even ? '-right-10' : '-left-10'} w-48 h-48 rounded-full opacity-20 blur-3xl`} style={{ background: `linear-gradient(135deg, ${project.id === 'retail-sales' ? '#F59E0B,#EC4899' : project.id === 'ai-briefing' ? '#EC4899,#7C3AED' : '#7C3AED,#06B6D4'})` }} />
+                        <div className="w-full h-full relative z-10">
+                          <project.Visual />
+                        </div>
+                      </motion.div>
                     </div>
                   </div>
-                  <motion.div
-                    whileHover={{ scale: 1.015 }}
-                    className={`p-7 md:p-8 bg-[#F9F8F6] dark:bg-[#0D0D0D] flex items-center ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}
-                  >
-                    <div className="w-full scale-[1.02]">
-                      <project.Visual />
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.article>
+              )
+            })}
           </AnimatePresence>
         </div>
       </div>
