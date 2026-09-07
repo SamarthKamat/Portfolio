@@ -7,6 +7,7 @@ import JourneySection from './components/sections/JourneySection'
 import SkillsSection from './components/sections/SkillsSection'
 import ContactSection from './components/sections/ContactSection'
 import Footer from './components/Footer'
+import PortfolioChatbot from './components/PortfolioChatbot'
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true)
@@ -31,6 +32,7 @@ export default function App() {
         <ContactSection />
       </main>
       <Footer />
+      <PortfolioChatbot darkMode={darkMode} />
     </div>
   )
 }

@@ -347,7 +347,7 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {personal.map((p, i) => (
                 <motion.div
                   key={p.label}
@@ -356,7 +356,7 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.6 }}
                   whileHover={{ y: -10, scale: 1.025 }}
-                  className={`group relative rounded-3xl overflow-hidden transition-all duration-500 ${i === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}`}
+                  className="group relative rounded-3xl overflow-hidden transition-all duration-500"
                   style={{
                     background: `linear-gradient(160deg, ${p.c1}12 0%, ${p.c2}08 55%, rgba(255,255,255,0.4) 100%)`,
                     boxShadow: `0 10px 32px ${p.c1}1C, inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 ${p.c2}0A`,
@@ -368,7 +368,7 @@ export default function AboutSection() {
                   <div className="absolute -bottom-10 -right-10 w-44 h-44 rounded-full opacity-0 group-hover:opacity-[0.18] blur-2xl transition-all duration-700 pointer-events-none"
                        style={{ background: `linear-gradient(135deg, ${p.c1}, ${p.c2})` }} />
 
-                  <div className="relative p-5 sm:p-6 lg:p-6 flex flex-col gap-4 h-full min-h-[190px]">
+                  <div className="relative p-5 sm:p-6 lg:p-5 flex flex-col gap-4 h-full min-h-[176px]">
                     <div className="flex items-start justify-between gap-3 mb-0.5">
                       <div className="relative shrink-0">
                         <div className="absolute -inset-1.5 rounded-2xl opacity-30 blur-md group-hover:opacity-55 transition-opacity duration-500"
@@ -396,14 +396,14 @@ export default function AboutSection() {
                     </div>
 
                     <div className="flex flex-col gap-1.5 min-h-[3.5rem] justify-start">
-                      <h4 className="font-display font-black text-[1.08rem] sm:text-[1.18rem] tracking-tight leading-tight"
+                      <h4 className="font-display font-black text-[1.04rem] sm:text-[1.14rem] tracking-tight leading-tight"
                           style={{
                             background: `linear-gradient(135deg, ${p.c1}, ${p.c2})`,
                             WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
                           }}>
                         {p.label}
                       </h4>
-                      <p className="text-[12px] sm:text-[12.5px] leading-snug text-[#4A4A55] dark:text-[#A0A0B8] font-semibold">
+                      <p className="text-[11.5px] sm:text-[12px] leading-snug text-[#4A4A55] dark:text-[#A0A0B8] font-semibold">
                         {p.stat}
                       </p>
                     </div>

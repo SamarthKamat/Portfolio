@@ -92,10 +92,6 @@ export default function Footer() {
             <p className="text-xs font-mono text-[#A3A3A3] dark:text-[#6E6E78]">
               © {year} Samarth Ravindra Kamat. All rights reserved.
             </p>
-            <span className="text-[#D4D3D1] dark:text-[#2A2A2A] hidden sm:inline">·</span>
-            <p className="text-xs font-mono text-[#A3A3A3] dark:text-[#6E6E78]">
-              Built with <span className="text-gradient-sun font-bold">React + Vite + Tailwind CSS</span>
-            </p>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">

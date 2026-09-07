@@ -11,7 +11,7 @@ const journeyItems = [
     solidB: '#7C3AED',
     metric: '2 Months',
     metricSub: 'Data Analytics & Software Dev',
-    body: 'Built analytics solutions with Python, OpenCV and JavaScript/Vibe. Implemented bit-plane slicing, Fourier Transform, sharpening and Canny edge detection. Delivered social media campaign EDA (46 respondents, 78.3% Instagram exposure) and a full-stack React/Flask Text-to-Speech app with downloadable audio.',
+    body: 'Built analytics solutions with Python, OpenCV and JavaScript/Vibe. Implemented bit-plane slicing, Fourier Transform, sharpening and Canny edge detection. Delivered social media campaign EDA across 46 respondents and a full-stack React/Flask Text-to-Speech app with downloadable audio.',
     tags: ['Python', 'OpenCV', 'React/Flask', 'EDA', 'Image Processing'],
   },
   {
@@ -175,22 +175,6 @@ export default function JourneySection() {
                     <p className="text-[14px] md:text-sm text-[#525252] dark:text-[#9A9AA2] leading-[1.75] mb-5 max-w-3xl relative z-10">
                       {item.body}
                     </p>
-
-                    <div className="flex flex-wrap items-center gap-3 mb-4 relative z-10">
-                      <div className="flex-1 h-1.5 rounded-full bg-black/[0.04] dark:bg-white/[0.04] overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${100 - (i * 18)}%` }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.2 + i * 0.1, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                          className="h-full rounded-full"
-                          style={{ background: `linear-gradient(90deg, ${item.solidA}, ${item.solidB})`, boxShadow: `0 0 10px ${item.solidB}66` }}
-                        />
-                      </div>
-                      <span className="mono text-[9.5px] font-bold uppercase tracking-[0.18em]" style={{ color: item.solidB }}>
-                        {100 - (i * 18)}% Signal
-                      </span>
-                    </div>
 
                     <div className="flex flex-wrap gap-2 relative z-10">
                       {item.tags.map((tag) => (

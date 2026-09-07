@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion'
+import nptelEnthusiastImg from '../../NPTEL Enthusiast.png'
+import nptelMotivatedImg from '../../NPTEL MOTIVATED LEARNER.png'
+import scholarshipPdf from '../../../Scholarship_Proof.pdf'
 
 const proficiency = [
   { name: 'Python · Pandas · NumPy', level: 92, sub: 'EDA · Data wrangling · ML pipelines', c1: '#2563EB', c2: '#7C3AED' },
@@ -70,11 +73,11 @@ const groups = [
 ]
 
 const certifications = [
-  { name: 'Google AI Essentials (Coursera) — 5-course Specialisation', year: '2026', tags: ['Prompt Eng.', 'AI', 'Productivity'], badge: '🎓', c1: '#2563EB', c2: '#06B6D4', status: 'Verified · Active', issuer: 'Coursera · Google' },
-  { name: 'Be10X AI Tools & Claude Workshop', year: '2026', tags: ['Presentations', 'Data', 'Debugging'], badge: '⚡', c1: '#7C3AED', c2: '#EC4899', status: 'Workshop Certified', issuer: 'Be10X' },
-  { name: 'NPTEL Enthusiast (IIT Madras)', year: '2024', tags: ['8+ Exams', '75%+ Pass'], badge: '🏅', c1: '#059669', c2: '#10B981', status: '8+ Courses Cleared', issuer: 'IIT Madras · NPTEL' },
-  { name: 'NPTEL Motivated Learner (IIT Madras)', year: '2025', tags: ['4 Semesters', '75%+ Pass'], badge: '🎖️', c1: '#EA580C', c2: '#F59E0B', status: '4-Sem Consistency', issuer: 'IIT Madras · NPTEL' },
-  { name: 'Government Scholarship — Indian Classical Music', year: '2019–21', tags: ['₹48K Overall', '2 Years'], badge: '🏆', c1: '#06B6D4', c2: '#7C3AED', status: 'Talent Grant Awarded', issuer: 'Govt. of India · CCRT' },
+  { name: 'Google AI Essentials (Coursera) — 5-course Specialisation', year: '2026', tags: ['Prompt Eng.', 'AI', 'Productivity'], badge: '🎓', c1: '#2563EB', c2: '#06B6D4', status: 'Verified · Active', issuer: 'Coursera · Google', linkType: 'external', link: 'https://coursera.org/share/8ee860a09d5f4987c0efd0021b7e552e' },
+  { name: 'Be10X AI Tools & Claude Workshop', year: '2026', tags: ['Presentations', 'Data', 'Debugging'], badge: '⚡', c1: '#7C3AED', c2: '#EC4899', status: 'Workshop Certified', issuer: 'Be10X', linkType: 'external', link: 'https://certx.in/certificate/0270772f-3809-4400-b29b-1e1c61cd09971643660' },
+  { name: 'NPTEL Enthusiast (IIT Madras)', year: '2024', tags: ['8+ Exams', 'Consistent Performance'], badge: '🏅', c1: '#059669', c2: '#10B981', status: '8+ Courses Cleared', issuer: 'IIT Madras · NPTEL', linkType: 'image', link: nptelEnthusiastImg },
+  { name: 'NPTEL Motivated Learner (IIT Madras)', year: '2025', tags: ['4 Semesters', 'Consistent Performance'], badge: '🎖️', c1: '#EA580C', c2: '#F59E0B', status: '4-Sem Consistency', issuer: 'IIT Madras · NPTEL', linkType: 'image', link: nptelMotivatedImg },
+  { name: 'Government Scholarship — Indian Classical Music', year: '2019–21', tags: ['₹48K Overall', '2 Years'], badge: '🏆', c1: '#06B6D4', c2: '#7C3AED', status: 'Talent Grant Awarded', issuer: 'Govt. of India · CCRT', linkType: 'pdf', link: scholarshipPdf },
 ]
 
 const stack = [
@@ -100,6 +103,15 @@ function Reveal({ children, delay = 0, className = '' }) {
       {children}
     </motion.div>
   )
+}
+
+function openProof(c) {
+  if (!c.link) return
+  if (c.linkType === 'external') {
+    window.open(c.link, '_blank', 'noopener,noreferrer')
+  } else {
+    window.open(c.link, '_blank', 'noopener,noreferrer')
+  }
 }
 
 export default function SkillsSection() {
@@ -163,7 +175,7 @@ export default function SkillsSection() {
                   >
                     <div className="absolute -top-16 -right-12 w-40 h-40 rounded-full opacity-0 group-hover:opacity-[0.12] blur-2xl transition-opacity duration-600 pointer-events-none"
                          style={{ background: `radial-gradient(circle, ${s.c2}, transparent 60%)` }} />
-                    <div className="flex items-start justify-between gap-3 mb-3 relative z-10">
+                    <div className="flex items-start gap-3 mb-3 relative z-10">
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2.5 flex-wrap mb-1">
                           <span className="mono text-[9.5px] font-bold px-2 py-0.5 rounded-md flex items-center justify-center min-w-[32px]"
@@ -171,13 +183,6 @@ export default function SkillsSection() {
                           <p className="font-display font-bold text-[14px] sm:text-[15px] text-[#141414] dark:text-white leading-tight truncate">{s.name}</p>
                         </div>
                         <p className="text-[11.5px] text-[#656578] dark:text-[#9090A8] mt-0.5 ml-0 sm:ml-[34px]">{s.sub}</p>
-                      </div>
-                      <div className="text-right shrink-0">
-                        <p className="font-display font-black text-xl leading-none"
-                           style={{
-                             background: `linear-gradient(135deg, ${s.c1}, ${s.c2})`,
-                             WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
-                           }}>{s.level}<span className="text-[10px] font-bold ml-0.5 opacity-80">%</span></p>
                       </div>
                     </div>
                     <div className="relative h-2.5 sm:h-3 rounded-full overflow-hidden bg-black/[0.04] dark:bg-white/[0.05] border border-black/[0.03] dark:border-white/[0.04] relative z-10">
@@ -199,7 +204,7 @@ export default function SkillsSection() {
                              style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.45))' }} />
                       </motion.div>
                     </div>
-                    <div className="flex items-center justify-between mt-2 relative z-10">
+                    <div className="flex items-center mt-2 relative z-10">
                       <div className="flex gap-1">
                         {Array.from({ length: 5 }).map((_, j) => (
                           <div key={j} className="w-1.5 h-1.5 rounded-full transition-all"
@@ -212,10 +217,6 @@ export default function SkillsSection() {
                                }} />
                         ))}
                       </div>
-                      <span className="mono text-[9px] font-bold uppercase tracking-[0.15em] opacity-70"
-                            style={{ color: s.c2 }}>
-                        {s.level >= 90 ? 'TOP TIER' : s.level >= 80 ? 'ADVANCED' : s.level >= 70 ? 'PROFICIENT' : 'CAPABLE'}
-                      </span>
                     </div>
                   </motion.div>
                 ))}
@@ -388,7 +389,8 @@ export default function SkillsSection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.07 * i, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ y: -5, scale: 1.003 }}
-                  className="group relative overflow-hidden rounded-2xl sm:rounded-[1.5rem] border border-white/60 dark:border-white/[0.06] bg-gradient-to-br from-white/90 via-white/75 to-white/55 dark:from-[#12121A]/90 dark:via-[#0F0F16]/80 dark:to-[#0B0B12]/70 backdrop-blur-xl transition-all duration-500"
+                  onClick={() => openProof(c)}
+                  className="group relative overflow-hidden rounded-2xl sm:rounded-[1.5rem] border border-white/60 dark:border-white/[0.06] bg-gradient-to-br from-white/90 via-white/75 to-white/55 dark:from-[#12121A]/90 dark:via-[#0F0F16]/80 dark:to-[#0B0B12]/70 backdrop-blur-xl transition-all duration-500 cursor-pointer"
                   style={{
                     boxShadow: `0 10px 30px ${c.c1}15, inset 0 1px 0 rgba(255,255,255,0.7)`,
                   }}
@@ -455,18 +457,25 @@ export default function SkillsSection() {
                              WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent',
                            }}>{c.year}</p>
                       </div>
-                      <motion.div
-                        whileHover={{ x: 3, scale: 1.08 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-lg cursor-pointer shrink-0 transition-all group-hover:shadow-xl"
-                        style={{
-                          background: `linear-gradient(135deg, ${c.c1}, ${c.c2})`,
-                          boxShadow: `0 8px 20px ${c.c1}44`,
-                        }}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M7 17L17 7M17 7H8M17 7v9"/>
-                        </svg>
-                      </motion.div>
+                      <div className="flex flex-col items-center sm:items-end gap-1.5">
+                        <p className="mono text-[8.5px] font-black uppercase tracking-[0.16em]"
+                           style={{ color: c.c2 }}>
+                          {c.linkType === 'pdf' ? '📄 View PDF' : c.linkType === 'image' ? '🖼️ View Cert' : '🔗 View Proof'}
+                        </p>
+                        <motion.div
+                          whileHover={{ x: 3, scale: 1.08 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={(e) => { e.stopPropagation(); openProof(c); }}
+                          className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-lg cursor-pointer shrink-0 transition-all group-hover:shadow-xl"
+                          style={{
+                            background: `linear-gradient(135deg, ${c.c1}, ${c.c2})`,
+                            boxShadow: `0 8px 20px ${c.c1}44`,
+                          }}>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M7 17L17 7M17 7H8M17 7v9"/>
+                          </svg>
+                        </motion.div>
+                      </div>
                     </div>
                   </div>
                 </motion.article>
