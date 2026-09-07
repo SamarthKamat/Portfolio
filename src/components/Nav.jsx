@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import resumeImage from '../../Samarth_Resume.png'
+import { downloadResume, viewResume } from '../resume'
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -115,9 +115,8 @@ export default function Nav({ darkMode, setDarkMode }) {
                 )}
               </button>
               <a
-                href={resumeImage}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={(e) => { e.preventDefault(); viewResume(); }}
                 className="group flex items-center gap-2 px-5 py-2.5 text-[13.5px] font-bold text-white rounded-full transition-all shadow-[0_6px_20px_rgba(124,58,237,0.38)] hover:shadow-[0_10px_30px_rgba(236,72,153,0.45)] hover:-translate-y-0.5"
                 style={{
                   background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #EC4899 100%)',
@@ -178,9 +177,8 @@ export default function Nav({ darkMode, setDarkMode }) {
               ))}
               <div className="h-px bg-black/5 dark:bg-white/10 mx-3 my-2"/>
               <a
-                href={resumeImage}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={(e) => { e.preventDefault(); setMobileOpen(false); viewResume(); }}
                 className="mx-1 mt-2 flex items-center justify-center gap-1.5 px-4 py-3.5 text-sm font-semibold text-white rounded-2xl"
                 style={{ background: 'linear-gradient(135deg, #2563EB, #7C3AED, #EC4899)' }}
               >

@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import officialPhoto from '../../../Samarth_Photo.jpeg'
-import resumeImage from '../../../Samarth_Resume.png'
+import { downloadResume } from '../../resume'
 
 const interestPills = [
   { label: 'Business Analytics', color: '#2563EB' },
@@ -125,9 +125,8 @@ export default function HomeSection() {
                     </svg>
                   </a>
                   <a
-                    href={resumeImage}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); downloadResume(); }}
                     className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[14px] font-bold rounded-full border-2 border-[#141414]/10 dark:border-white/10 text-[#141414] dark:text-white hover:border-[#7C3AED]/50 dark:hover:border-[#A78BFA]/60 hover:text-[#7C3AED] dark:hover:text-[#C4B5FD] transition-all duration-200 backdrop-blur-sm bg-white/60 dark:bg-white/[0.03]"
                   >
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

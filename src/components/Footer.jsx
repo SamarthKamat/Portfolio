@@ -1,4 +1,4 @@
-import resumeImage from '../../Samarth_Resume.png'
+import { downloadResume, RESUME_PDF } from '../resume'
 
 const socialLinks = [
   {
@@ -8,14 +8,16 @@ const socialLinks = [
     c1: '#0A66C2',
     c2: '#2563EB',
     short: 'IN',
+    onClick: null,
   },
   {
     label: 'Resume',
-    href: resumeImage,
+    href: RESUME_PDF,
     target: '_blank',
     c1: '#EA580C',
     c2: '#EAB308',
     short: 'RS',
+    onClick: (e) => { e.preventDefault(); downloadResume(); },
   },
   {
     label: 'Email',
@@ -73,6 +75,7 @@ export default function Footer() {
                   href={s.href}
                   target={s.target}
                   rel="noopener noreferrer"
+                  onClick={s.onClick || undefined}
                   className="group relative overflow-hidden bg-white dark:bg-[#121218] border border-[#E5E4E2] dark:border-[#1E1E24] rounded-2xl p-4 transition-all hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 rounded-full opacity-15 blur-2xl group-hover:opacity-25 transition-opacity" style={{ background: `linear-gradient(135deg, ${s.c1}, ${s.c2})` }} />

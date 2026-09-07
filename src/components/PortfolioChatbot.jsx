@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import resumeImage from "../../Samarth_Resume.png"
+import { downloadResume, viewResume, RESUME_FILENAME } from "../resume"
 
 const STORAGE_KEY = "samarth-portfolio-chatbot-history-v2"
 
@@ -59,7 +59,7 @@ const knowledgeTopics = [
       "Samarth's professional identity is built on three pillars.\n\n1) Computer Engineering Foundation: B.E. from Goa College of Engineering (8.37 CGPA till 7th Sem) with C, C++, Python, OpenCV, data structures & algorithms — this gives him production-grade code fluency.\n\n2) PGDM Big Data Analytics: Currently at Goa Institute of Management, 2026–28 batch, where he layers business context, managerial thinking, and structured frameworks onto his engineering base.\n\n3) The Integration Point: He specializes in the sweet spot where engineering meets business decisions. He can own a problem end-to-end — from data cleaning and EDA to DAX measures, Power BI dashboards, ML models, LLM pipelines, and the final presentation deck. No separate analyst vs developer handoffs.",
     actions: [
       { label: "About Section", type: "section", target: "about" },
-      { label: "Download Resume", type: "resume" },
+      { label: "📥 Download Resume PDF", type: "resume_download" },
     ],
   },
   {
@@ -284,7 +284,7 @@ const knowledgeTopics = [
     actions: [
       { label: "Contact Section", type: "section", target: "contact" },
       { label: "Home / Hero Section", type: "section", target: "home" },
-      { label: "Download Resume", type: "resume" },
+      { label: "📥 Download Resume PDF", type: "resume_download" },
     ],
   },
   {
@@ -326,9 +326,10 @@ const knowledgeTopics = [
     title: "Resume / CV",
     keywords: ["resume", "cv", "curriculum vitae", "bio data", "download resume", "view resume", "detailed resume", "full resume", "whats on the resume"],
     answer:
-      "The portfolio includes a downloadable / viewable resume image file (Samarth_Resume.png).\n\nThe resume (and this entire portfolio) comprehensively covers:\n\n✓ Complete Education Timeline (PGDM → B.E. → HSC → SSC)\n✓ 3 Flagship Projects (Retail BI Dashboard · AI Briefing Platform · Speech LSTM Disease Detection)\n✓ Core Technical Skills & Tools\n✓ Certifications & Scholarships (Google AI Essentials · Be10X · NPTEL · CCRT)\n✓ Internship and Professional Experience (ITG Goa Industrial Trainee)\n✓ Positions of Responsibility & Leadership\n✓ Sports & Extracurricular Achievements\n\nYou can open the resume directly from the Home section's 'Download Resume' button, the Nav bar, the Footer, or the buttons below.",
+      `The portfolio includes a full, ATS-friendly PDF resume: "${RESUME_FILENAME}".\n\nThe resume (and this entire portfolio) comprehensively covers:\n\n✓ Complete Education Timeline (PGDM → B.E. → HSC → SSC)\n✓ 3 Flagship Projects (Retail BI Dashboard · AI Briefing Platform · Speech LSTM Disease Detection)\n✓ Core Technical Skills & Tools\n✓ Certifications & Scholarships (Google AI Essentials · Be10X · NPTEL · CCRT)\n✓ Internship and Professional Experience (ITG Goa Industrial Trainee)\n✓ Positions of Responsibility & Leadership\n✓ Sports & Extracurricular Achievements\n\nUse the buttons below to download the PDF or open it in a new tab.`,
     actions: [
-      { label: "Open Resume in New Tab", type: "resume" },
+      { label: "📥 Download Resume PDF", type: "resume_download" },
+      { label: "👁️ View Resume in Tab", type: "resume_view" },
       { label: "Contact Section", type: "section", target: "contact" },
     ],
   },
@@ -688,8 +689,12 @@ export default function PortfolioChatbot({ darkMode = true }) {
       }, 160)
       return
     }
-    if (action.type === "resume") {
-      window.open(resumeImage, "_blank", "noopener,noreferrer")
+    if (action.type === "resume" || action.type === "resume_view") {
+      viewResume()
+      return
+    }
+    if (action.type === "resume_download") {
+      downloadResume()
       return
     }
     if (action.type === "link") {
@@ -1039,7 +1044,7 @@ export default function PortfolioChatbot({ darkMode = true }) {
                                 key={`${message.id}-${action.label}-${action.target || action.href || ""}`}
                                 type="button"
                                 onClick={() => handleAction(action)}
-                                className="group text-[11px] font-extrabold px-3.5 py-2 rounded-xl border transition-all hover:-translate-y-[2px] shadow-sm hover:shadow-md"
+                                className="group text-[11px] font-extrabold px-3.5 py-2 rounded-xl border transition-all hover:-translate-y-[2px] shadow-sm hover:shadow-md whitespace-nowrap shrink-0"
                                 style={darkMode ? {
                                   borderColor: "rgba(167,139,250,0.3)",
                                   background: "linear-gradient(135deg, rgba(124,58,237,0.22), rgba(236,72,153,0.16))",
@@ -1052,8 +1057,8 @@ export default function PortfolioChatbot({ darkMode = true }) {
                                 }}
                               >
                                 {action.label}
-                                <span className="inline-block ml-1 opacity-80 group-hover:translate-x-0.5 transition-transform font-black">
-                                  {action.type === "resume" ? "↗" : action.type === "link" ? "↗" : "→"}
+                                <span className="inline-block ml-1 opacity-80 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform font-black">
+                                  {action.type === "resume_download" ? "↓" : (action.type === "resume" || action.type === "resume_view" || action.type === "link") ? "↗" : "→"}
                                 </span>
                               </button>
                             ))}

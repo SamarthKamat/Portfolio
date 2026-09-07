@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import resumeImage from '../../../Samarth_Resume.png'
+import { downloadResume, viewResume } from '../../resume'
 
 const contactTiles = [
   {
@@ -185,8 +185,8 @@ export default function ContactSection() {
               style={{ background: 'linear-gradient(135deg, #0A0A1A 0%, #1E1B4B 45%, #0F172A 100%)' }}
             >
               <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(167,139,250,0.35), transparent 45%), radial-gradient(circle at 80% 80%, rgba(96,165,250,0.35), transparent 45%)' }} />
-              <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="max-w-md">
+              <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div className="max-w-none lg:max-w-md">
                   <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-white/50 mb-3">📄 READY TO SHARE</p>
                   <h3 className="text-[1.45rem] md:text-[1.8rem] font-black text-white leading-tight mb-2">
                     Full Resume · <span className="text-gradient-sun">1 Page · Targeted</span>
@@ -195,18 +195,31 @@ export default function ContactSection() {
                     Education, projects, technical skills, certifications and PORs — formatted for ATS and recruiter scans.
                   </p>
                 </div>
-                <motion.a
-                  href={resumeImage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.04, y: -3 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl font-bold text-[#0F0F12] shadow-2xl shadow-amber-500/30 whitespace-nowrap"
-                  style={{ background: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 45%, #F97316 100%)' }}
-                >
-                  📋 Download / View Resume
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                </motion.a>
+                <div className="flex flex-wrap gap-3 items-stretch justify-start lg:justify-end shrink-0">
+                  <motion.a
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); downloadResume(); }}
+                    whileHover={{ scale: 1.03, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl font-black text-[#0F0F12] shadow-2xl shadow-amber-500/30 whitespace-nowrap min-w-[150px] flex-1 sm:flex-none"
+                    style={{ background: 'linear-gradient(135deg, #FCD34D 0%, #F59E0B 45%, #F97316 100%)' }}
+                  >
+                    <span className="text-lg leading-none">📥</span>
+                    <span>Download PDF</span>
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); viewResume(); }}
+                    whileHover={{ scale: 1.03, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl font-bold text-white shadow-2xl shadow-[#1E1B4B]/30 border border-white/15 whitespace-nowrap min-w-[150px] flex-1 sm:flex-none"
+                    style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.55) 0%, rgba(124,58,237,0.55) 100%)' }}
+                  >
+                    <span className="text-lg leading-none">👁️</span>
+                    <span>View in Tab</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" className="shrink-0"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                  </motion.a>
+                </div>
               </div>
             </motion.div>
           </motion.div>
